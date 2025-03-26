@@ -29,6 +29,24 @@
   object-fit: contain;
 }
 /* 음식점 목록 *****************************************/
+/* 음식점 탭 */
+.restaurant-favorite-tab > #app-container {
+  display: flex;
+  justify-content: space-around;
+  padding: 0 20px;
+  margin-top: 24px;
+}
+.tab {
+  padding: 12px;
+  cursor: pointer;
+  border-bottom: 1.5px solid var(--grey-200);
+  width: 50%;
+  text-align: center;
+}
+.tab-active {
+  color: var(--primary-color);
+  border-color: var(--primary-color);
+}
 /* 카테고리/정렬 필터 */
 .restaurant-filter-container {
   display: flex;
@@ -85,9 +103,9 @@
   height: 36px;
 }
 .restaurant__info {
+  width: 100%;
   display: flex;
   flex-direction: column;
-  justify-content: flex-start;
 }
 .restaurant__name {
   margin: 0;
@@ -104,6 +122,15 @@
   text-overflow: ellipsis;
   -webkit-line-clamp: 2;
   -webkit-box-orient: vertical;
+}
+.restaurant__favorite {
+  width: 32px;
+  height: 32px;
+}
+.restaurant__info--header {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
 }
 /* 음식점 추가 모달 *****************************************/
 .modal {
