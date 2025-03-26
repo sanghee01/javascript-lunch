@@ -126,10 +126,10 @@ class Header extends Component {
   }
   onRender() {
     if (!this.element.querySelector(".gnb__button")) {
-      const baseURL = window.location.origin.includes("github.io") ? "/javascript-lunch" : "../..";
+      const baseURL = window.location.origin.includes("github.io") ? "/javascript-lunch" : "../../public";
       const gnbButton = `
         <button type="button" class="gnb__button" aria-label="음식점 추가">
-          <img src="${baseURL}/public/images/add-button.png" alt="음식점 추가" />
+          <img src="${baseURL}/images/add-button.png" alt="음식점 추가" />
         </button>
       `;
       const $gnbTitle = this.element.querySelector(".gnb__title");
@@ -262,11 +262,11 @@ const inputBoxList = [
 ];
 class InputModal extends Component {
   getModalInput(modalForm) {
-    const baseURL = window.location.origin.includes("github.io") ? "/javascript-lunch" : "../..";
+    const baseURL = window.location.origin.includes("github.io") ? "/javascript-lunch" : "../../public";
     const formData = new FormData(modalForm);
     const modalInput = {
       id: Date.now(),
-      imgUrl: `${baseURL}/public/images/category-${FOOD_CATEGORY[formData.get(INPUT_FIELDS.CATEGORY)]}.png`,
+      imgUrl: `${baseURL}/images/category-${FOOD_CATEGORY[formData.get(INPUT_FIELDS.CATEGORY)]}.png`,
       category: formData.get(INPUT_FIELDS.CATEGORY),
       name: formData.get(INPUT_FIELDS.NAME),
       distance: formData.get(INPUT_FIELDS.DISTANCE),
@@ -314,11 +314,11 @@ class Restaurant extends Component {
     super(props, parent, "li", "restaurant");
   }
   template() {
-    const baseURL = window.location.origin.includes("github.io") ? "/javascript-lunch" : "../..";
+    const baseURL = window.location.origin.includes("github.io") ? "/javascript-lunch" : "../../public";
     return ` 
   <div class="restaurant__category">
     <img
-      src="${baseURL}/public/images/${this.props.imgUrl}"
+      src="${baseURL}/images/${this.props.imgUrl}"
       alt="${this.props.category}"
       class="category-icon"
     />
